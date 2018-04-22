@@ -1,0 +1,71 @@
+@import models.users.User
+@(title: String, user: User )(content: Html)
+
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+     
+     <title>Project</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+     <link href="@routes.Assets.versioned("stylesheets/main.css")" rel="stylesheet" />
+       <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   </head>
+   <body>
+   
+   <!-- Navbar -->
+   <nav class="navbar navbar-default">
+     <div class="container">
+       <div class="navbar-header">
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>                        
+         </button>
+         <a class="navbar-brand" href="@routes.AdminProductCtrl.index()">TechCenter</a>
+       </div>
+       <div class="collapse navbar-collapse" id="myNavbar">
+         <ul class="nav navbar-nav navbar-right">
+           <li><a href="@routes.AdminProductCtrl.listProducts(0)">STORE</a></li>
+           <li @if(title=="Login"){class="active"}>
+              @if(user != null) {
+                  <a href="@controllers.security.routes.LoginCtrl.logout()">LOGOUT</a>
+              } else {
+                  <a href="@controllers.security.routes.LoginCtrl.login()">LOGIN</a>
+              }
+  
+          </li>
+           <li><a href="#">REGISTER</a></li>
+         </ul>
+       </div>
+     </div>
+   </nav>
+   
+   @content
+   
+   <!-- Footer -->
+   <div class="content">
+   </div>
+       <footer id="myFooter">
+           <div class="container">
+              
+           </div>
+           <div class="social-networks">
+               <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+               <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+               <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+           </div>
+           <div class="footer-copyright">
+               <p>© 2018 Copyright - Tech Center </p>
+           </div>
+       </footer>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+       <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   </body>
+   </html>

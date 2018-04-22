@@ -1,0 +1,96 @@
+
+@import models.users.User
+
+@(title: String, user: models.users.User )
+@main("Products",user) {
+    <!DOCTYPE html>
+    <html lang="en">
+      <style>
+      h2 {
+    font-size: 25px;
+}
+body {
+    font: 20px Montserrat, sans-serif;
+    color: #fff;
+  }
+p {font-size: 16px;
+}
+.margin {margin-bottom: 45px;
+}
+
+.bg-1 { 
+  background-color: #383737;
+  color: #ffffff;
+  text-indent: 65px;
+  line-height: 2;
+  word-spacing: 2px;
+  text-align : center;
+ 
+ 
+}
+
+.bg-3 { 
+  background-color: #383737; 
+  color: #ffffff;
+
+}
+
+hr {
+width: 85%;
+}
+.img2{
+margin-top: 50px;
+padding-bottom: 61px;
+}
+</style>
+    <head>
+      
+      <title>Bootstrap Theme Simply Me</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link href="@routes.Assets.versioned("stylesheets/main.css")" rel="stylesheet" />
+    </head>
+    <body>
+    <!-- First Container -->
+    <div class="container-fluid bg-1 text-center">
+    <h2>Welcome to TechCenter</h2>
+    <p>TechCenter is a online IT shop. On our website, you can find latest realeases of many peripherals provided by top companies such as Nvidia, MSI, Intel and many more. Our website creates a relaible source of PC peripherals as-well as the ability to purchase such items. To find our more about our objective in the IT world, feel free to check-out our <a href="mailto:someone">
+      About-Us</a> & <a href="mailto:someone">
+      Contact-Us</a> page</p>
+    <hr>
+    </div>
+    
+    
+    
+    <!-- Third Container (Grid) -->
+    <div class="container-fluid bg-3 text-center">    
+      <h2>Our Products</h3><br>
+      <div class="row">
+        <div class="col-sm-4">
+          
+          <img src="@routes.Assets.versioned("images/processor.png")"width="50%">
+          <p>Intel Core i7-2630QM - Processor - 2.9GHz</p>
+        </div>
+        <div class="col-sm-4"> 
+          
+          <img src="@routes.Assets.versioned("images/card.png")"width="60%">
+           <p>Nvidia GTX 1080TI - Graphics Card - 8GB</p>
+        </div>
+        <div class="col-sm-4"> 
+          
+          <img src="@routes.Assets.versioned("images/ssd.png")"width="50%">
+          <p>Samsung Evo - Solid State Disc - 500GB</p>
+          
+        </div>
+        <hr>
+      </div>
+    </div>
+    
+    </body>
+    </html>
+  }
